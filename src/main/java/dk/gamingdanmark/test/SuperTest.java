@@ -32,7 +32,7 @@ public final class SuperTest extends SimplePlugin {
 		System.out.println("knock, knock!"); // COMMENT
 		System.out.println("Hej" + "hejsa");
 		/*
-		Super sej comment
+		 * Super sej comment
 		 */
 		System.out.println("Hej" + 2 + 3 + (1-1));
 
