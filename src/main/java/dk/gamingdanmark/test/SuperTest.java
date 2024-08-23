@@ -15,15 +15,15 @@ import org.mineacademy.fo.plugin.SimplePlugin;
 public final class SuperTest extends SimplePlugin {
 
 	/**
-	 * Dette er æbler
-	 */
-	int apples = 5;
-
-	/**
 	* Automatically perform login ONCE when the plugin starts.
 	*/
 	@Override
 	protected void onPluginStart() {
+
+		/**
+	 	* Dette er æbler
+	 	*/
+		int apples = 5;
 
 		/**
 		 * Dette her printer linjen ud
