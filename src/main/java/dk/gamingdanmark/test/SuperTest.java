@@ -5,6 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
+import javax.mail.Message;
+
 /**
  * PluginTemplate is a simple template you can use every time you make
  * a new plugin. This will save you time because you no longer have to
@@ -20,12 +22,12 @@ public final class SuperTest extends SimplePlugin {
 	@Override
 	protected void onPluginStart() {
 
-		/**
+		/*
 	 	* Dette er æbler
 	 	*/
 		int apples = 5;
 
-		/**
+		/*
 		 * Dette her printer linjen ud
 		 */
 		System.out.println(1);
@@ -36,6 +38,11 @@ public final class SuperTest extends SimplePlugin {
 		 */
 		System.out.println("Hej" + 2 + 3 + (1-1));
 
+		for (int testnumber = 1; testnumber < 20; testnumber++) {
+
+			System.out.println("Test loop: " + testnumber);
+
+		}
 
 	}
 
@@ -80,8 +87,47 @@ public final class SuperTest extends SimplePlugin {
 		if (event.getRightClicked().getType() == EntityType.COW)
 			event.getRightClicked().setFireTicks(20);
 
-		if (event.getRightClicked().getType() == EntityType.CHICKEN)
-			event.getRightClicked().setFireTicks(3*20);
+		if (event.getRightClicked().getType() == EntityType.CHICKEN) {
+			event.getRightClicked().setFireTicks(3 * 20);
+
+
+		/*
+		 * Virker slet ikke, men hvorfor?
+		 */
+		if (event.getRightClicked().getType() == EntityType.CREEPER) {
+			event.getRightClicked().setFireTicks(1); //Dosent print out
+			System.out.println("test"); //Dosent print out
+
+			for (int testnumber = 1; testnumber < 20; testnumber++) {
+
+				System.out.println("Test loop: " + testnumber);
+				//event.getRightClicked().getWorld().createExplosion(event.getRightClicked().getLocation(), testnumber);
+
+			}
+		}
+
+			/*
+			 * Understående while loop her, gav nogle heftige resultater.
+			 */
+			//while (event.getRightClicked().getFireTicks() > 0){
+			//	event.getPlayer().sendMessage("FireTicks " + (event.getRightClicked().getFireTicks()));
+			//}
+
+			/*
+			 * Understående linje giver logging data til consolen.
+			 */
+			//System.out.println(event.getRightClicked().getFireTicks());
+			//event.getPlayer().sendMessage("Test");
+
+		}
+
+		/*
+		 * Understående linje giver logging data til consolen.
+		 */
+		System.out.println(event.getRightClicked().getType());
+
+		//player.sendMessage(event.getRightClicked().getType()); //Dette virker ikke hvorfor?
+
 
 		//event.getRightClicked().getWorld().generateTree(event.getRightClicked().getLocation(), TreeType.BIRCH); //Virker ikke
 
